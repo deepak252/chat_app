@@ -1,11 +1,11 @@
-import 'package:chat_app/data/users.dart';
+import 'package:chat_app/modal/user.dart';
 import 'package:flutter/material.dart';
 
 class ProfileIconWidget extends StatelessWidget {
-  final int index;
+  final User user;
   const ProfileIconWidget({
     Key? key,
-    required this.index,
+    required this.user,
   }) : super(key: key);
 
   @override
@@ -17,7 +17,7 @@ class ProfileIconWidget extends StatelessWidget {
           backgroundColor: Color(0xfffa5266),
           child: ClipOval(
             child: Image.network(
-              '${Users.getUsers[index].urlAvatar}',
+              '${user.urlAvatar}',
               width: 40,
               height: 40,
               fit: BoxFit.cover,
@@ -27,16 +27,18 @@ class ProfileIconWidget extends StatelessWidget {
         Positioned(
           bottom: 0,
           right: 29,
-          child: CircleAvatar(
+          child: user.isOnline ? CircleAvatar(
             backgroundColor: Colors.white,
-            radius: 6.5,
+            radius: 5,
             child: CircleAvatar(
               backgroundColor: Color(0xfffa5266),
-              radius: 4,
+              radius: 3,
             ),
-          ),
-        )
+          ): Container(),
+        ),
       ],
     );
   }
 }
+
+

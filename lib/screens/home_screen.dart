@@ -63,25 +63,36 @@ class HomeScreen extends StatelessWidget {
               padding: const EdgeInsets.only(bottom:12.0),
               child: SizedBox(
                 height: 40,
-                child: ListView.separated(
+                // child: ListView.separated(
+                //   scrollDirection: Axis.horizontal,
+                //   itemCount: Users.getUsers.length,
+                //   separatorBuilder: (context,index){
+                //     return SizedBox(
+                //       width: 12,
+                //     );
+                //   },
+                //   itemBuilder: (context,index){
+                //     return ProfileIconWidget(index: index,);
+                //   }
+                // ),
+                child: ListView(
                   scrollDirection: Axis.horizontal,
-                  itemCount: Users.getUsers.length,
-                  separatorBuilder: (context,index){
-                    return SizedBox(
-                      width: 12,
-                    );
-                  },
-                  itemBuilder: (context,index){
-                    return ProfileIconWidget(index: index,);
-                  }
-                ),
+                  children: Users.getUsers.map<Widget>(
+                    (user) => user.isOnline ? Row(
+                      children: [
+                        ProfileIconWidget(user: user),
+                        SizedBox(width: 12,)
+                      ],
+                    ): Container(),
+                  ).toList(),
+                )
               ),
             ),
             Expanded(
               child: ListView.builder(
                 itemCount: Users.getUsers.length,
                 itemBuilder: (context,index){
-                  return ListTileWidget(index:  index,);
+                  return ListTileWidget(user: Users.getUsers[index]);
                 }
               ),
             )

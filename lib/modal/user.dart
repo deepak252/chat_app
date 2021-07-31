@@ -4,7 +4,7 @@ class User{
   final String userName;
   final bool isTyping;
   final bool isOnline;
-  final DateTime lastActive;
+  final String lastActive;
   final int unreadMessagesCount; 
 
   User({
