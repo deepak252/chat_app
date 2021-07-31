@@ -9,8 +9,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Chat',
-      // theme: ThemeData.light(),
       theme: ThemeData.light().copyWith(
         appBarTheme: AppBarTheme(
           backgroundColor: Colors.white,
@@ -20,12 +20,8 @@ class MyApp extends StatelessWidget {
           )       
         ),
         textTheme: TextTheme(
-          // bodyText1: TextStyle(
-          //   fontSize: 13.0,
-          //   color: Colors.black,
-          // ),
           bodyText2: TextStyle(
-            fontSize: 13.0,
+            fontSize: 12.0,
             color: Colors.black,
 
           )
