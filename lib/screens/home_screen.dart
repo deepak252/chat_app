@@ -17,13 +17,15 @@ class HomeScreen extends StatelessWidget {
           'Contacts',
         ),
         leading: IconButton(
-          icon: Icon(Icons.search,size:20),
           onPressed:(){},
+          icon: Icon(Icons.search,size:20),
+          splashRadius: 20,
         ),
         actions: [
           IconButton(
-            icon: Icon(Icons.more_horiz, size: 20),
             onPressed: () {},
+            icon: Icon(Icons.more_horiz, size: 20),
+            splashRadius: 20,
           ),
         ],
       ),
