@@ -1,4 +1,6 @@
 
+import 'package:chat_app/model/message_model.dart';
+
 class User{
   final String urlAvatar;
   final String userName;
@@ -6,6 +8,7 @@ class User{
   final bool isOnline;
   final String lastActive;
   final int unreadMessagesCount; 
+  final List<Message> messages;
 
   User({
     required this.urlAvatar,
@@ -14,6 +17,6 @@ class User{
     required this.isOnline,
     required this.lastActive,
     required this.unreadMessagesCount,
-    // required this.messages;
+    required this.messages,
   });
 }

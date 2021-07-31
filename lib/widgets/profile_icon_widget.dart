@@ -1,4 +1,4 @@
-import 'package:chat_app/modal/user.dart';
+import 'package:chat_app/model/user_model.dart';
 import 'package:flutter/material.dart';
 
 class ProfileIconWidget extends StatelessWidget {
@@ -10,6 +10,7 @@ class ProfileIconWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return Stack(
       children: [
         CircleAvatar(
